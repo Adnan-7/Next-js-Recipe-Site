@@ -31,6 +31,9 @@ export default function Recipes({ recipes }) {
             grid-template-columns: 1fr 1fr;
             grid-gap: 20px 60px;
           }
+          div{
+            margin:0px 90px
+          }
         `}
       </style>
     </div>
