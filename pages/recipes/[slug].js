@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import Skeleton from '../../components/Skeleton';
 const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
@@ -16,7 +17,7 @@ const paths = res.items.map((item)=>{
 })
   return {
     paths,
-    fallback:false
+    fallback:true
   }
 }
 
@@ -28,8 +29,18 @@ const {items} = await client.getEntries({
    "fields.slug":params.slug
    })
 
+   if(!items.length){
+     return {
+       redirect:{
+         destination:'/',
+         permanent:false
+       }
+     }
+   }
+
   return {
-    props:{recipe:items[0]}
+    props:{recipe:items[0]},
+    revalidate:1
   }
 }
 
@@ -37,7 +48,8 @@ const {items} = await client.getEntries({
 
 
 export default function RecipeDetails({recipe}) {
-  console.log(recipe);
+  if(!recipe) return  <Skeleton />
+   
   const {cookingTime,featuredImage,ingredients,method, title} = recipe.fields;
   return (
     <div className="main">
