@@ -64,13 +64,15 @@ export default function RecipeDetails({recipe}) {
  <style jsx>{`
 
         .main{
-          margin:0px 100px
+          margin:0px auto;
+          max-width:80%;
         }
         h2,h3 {
           text-transform: uppercase;
         }
          
         .banner h2 {
+        
           margin: 0;
           background: #fff;
           display: inline-block;

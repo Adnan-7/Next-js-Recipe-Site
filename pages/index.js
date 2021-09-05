@@ -27,13 +27,15 @@ export default function Recipes({ recipes }) {
       <style jsx>
         {`
           .recipe-list {
+            max-width:80%;
+            margin:0px auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-gap: 20px 60px;
           }
-          div{
-            margin:0px 200px
-          }
+          // div{
+          //   margin:0px 100px
+          // }
         `}
       </style>
     </div>
