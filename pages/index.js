@@ -32,7 +32,7 @@ export default function Recipes({ recipes }) {
             grid-gap: 20px 60px;
           }
           div{
-            margin:0px 90px
+            margin:0px 200px
           }
         `}
       </style>

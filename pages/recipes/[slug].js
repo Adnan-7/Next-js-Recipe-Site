@@ -40,7 +40,7 @@ export default function RecipeDetails({recipe}) {
   console.log(recipe);
   const {cookingTime,featuredImage,ingredients,method, title} = recipe.fields;
   return (
-    <div>
+    <div className="main">
       <div className="banner">
      <Image src={'https:'+featuredImage.fields.file.url} 
      width={1200}
@@ -63,7 +63,9 @@ export default function RecipeDetails({recipe}) {
       </div>
  <style jsx>{`
 
-        
+        .main{
+          margin:0px 100px
+        }
         h2,h3 {
           text-transform: uppercase;
         }
