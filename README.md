@@ -1,5 +1,5 @@
+## Nextjs Recipe Site
 Demo: https://next-js-recipe-site-cu2vxgy0f-khan44.vercel.app/
-
 This is the Next.js starter site (and course files) for the Next.js & Contentful tutorial by the Net Ninja.
 
 ## Getting Started
